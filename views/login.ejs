@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List - Login</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <h2>Login to Your Todo List</h2>
+        <form id="loginForm" action="/login" method="POST">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <% if (messages && messages.error && messages.error.length > 0) { %>
+                <div class="error-message">
+                    <%= messages.error %>
+                </div>
+            <% } %>
+            <button type="submit">Login</button>
+            <p class="auth-link">Don't have an account? <a href="/register">Sign up</a></p>
+        </form>
+    </div>
+</body>
+</html>

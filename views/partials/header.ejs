@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> - Todo App</title>
+  <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Todo App</h1>
+    <% if (user) { %>
+      <div class="absolute top-4 right-4 flex items-center">
+        <span class="mr-2 text-sm text-gray-600">Hello, <%= user.username %></span>
+        <a href="/logout" class="bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 rounded transition-colors">
+          Logout
+        </a>
+      </div>
+    <% } %>

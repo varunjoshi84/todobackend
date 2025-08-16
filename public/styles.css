@@ -1,0 +1,289 @@
+/* Common styles for all pages - Unified design */
+
+/* General styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.background-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 10%);
+    background-size: 50px 50px;
+    animation: moveBackground 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Container styles */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    margin-top: 1rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #6e8efb;
+    box-shadow: 0 0 8px rgba(110, 142, 251, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #6e8efb;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #5a78e0;
+    transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+  padding: 0.75rem;
+}
+
+.btn-red {
+  background-color: #ef4444;
+}
+
+.btn-red:hover {
+  background-color: #dc2626;
+}
+
+.btn-green {
+  background-color: #10b981;
+}
+
+.btn-green:hover {
+  background-color: #059669;
+}
+
+.btn-small {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Auth styling */
+.error-message {
+    color: #e74c3c;
+    margin-top: 1rem;
+}
+
+.auth-link {
+    margin-top: 1rem;
+    color: #555;
+}
+
+.auth-link a {
+    color: #6e8efb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Todo Dashboard specific */
+.welcome-message {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.todo-input {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.todo-input input {
+    flex: 1;
+}
+
+.todo-input button {
+    width: auto;
+}
+
+/* Task list styling */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item.completed {
+    background: #f0f0f0;
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 1rem;
+    width: auto;
+}
+
+.task-text {
+    flex: 1;
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #777;
+}
+
+/* Action and status components */
+.delete-btn {
+    background: #e74c3c;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    width: auto;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+.logout-link {
+    margin-top: 1.5rem;
+    display: inline-block;
+    color: #6e8efb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+/* Message styles */
+.flash-message {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+/* Todo list badge styles */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 10rem;
+    margin-right: 0.5rem;
+}
+
+.badge-read {
+    background: rgba(110, 142, 251, 0.15);
+    color: #5a78e0;
+}
+
+.badge-complete {
+    background: rgba(32, 201, 151, 0.15);
+    color: #1ba57e;
+}
